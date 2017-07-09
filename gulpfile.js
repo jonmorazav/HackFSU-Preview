@@ -2,8 +2,6 @@ const fs = require('fs');
 const gulp = require('gulp');
 const flatten = require('gulp-flatten')
 
-var locals = require('./src/locals.js');
-
 var build = 'html';
 var json = './src/json/'
 
@@ -25,7 +23,7 @@ gulp.task('pug', function() {
 gulp.task('sass', function() {
     const sass = require('gulp-sass');
     const paths = ['src/public/'];
-    gulp.src('src/views/*/*.sass')
+    gulp.src(['src/views/*/*.sass', 'src/public/*.sass'])
         .pipe(sass({includePaths: paths})
             .on('error', sass.logError))
         .pipe(flatten())
@@ -34,10 +32,15 @@ gulp.task('sass', function() {
 
 // Resource tasks
 
+gulp.task('js', function() {
+    gulp.src('src/views/**/*.js')
+        .pipe(flatten())
+        .pipe(gulp.dest(build + '/js'));
+});
 
 gulp.task('assets', function() {
-    gulp.src('src/public/assets/*')
-        .pipe(gulp.dest(build + '/public/'))
+    gulp.src('src/public/assets/**/*')
+        .pipe(gulp.dest(build + '/public/'));
     gulp.src('src/public/favicon/*')
         .pipe(gulp.dest(build));
 
@@ -54,17 +57,12 @@ gulp.task('clean', function() {
 
 gulp.task('watch', ['build'], function() {
     gulp.watch('src/views/**/*.pug', ['pug']);
-    gulp.watch('src/views/**/*.sass', ['sass']);
+    gulp.watch('src/**/*.sass', ['sass']);
+    gulp.watch('src/views/**/*.js', ['js']);
     gulp.watch('src/public/**', ['assets']);
     gulp.watch('src/locals.js', ['pug'])
 });
 
 gulp.task('views', ['pug', 'sass']);
-gulp.task('build', ['views', 'assets']);
+gulp.task('build', ['views', 'assets', 'js']);
 gulp.task('default', ['build']);
-
-gulp.task('repos', () => {
-    repos.then(res => {
-        console.log(res)
-    })
-});

@@ -2,6 +2,45 @@ extends ../template.pug
 
 block append styles
   link(rel="stylesheet", href=`${locals.css}/index.css`)
+      
+block append scripts
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+  script(src=`${locals.js}/index.js`)
 
 block content
-  
+  section.section
+    .container
+          
+      .my-columns
+        #logo
+          img(src=`${locals.img}/hackfsu.png`)
+
+        #main
+          .content
+            .title
+              span H
+              span a
+              span c
+              span k
+              span F
+              //- span 5
+              span.five 
+                span 5
+                img(src=`${locals.img}/5.svg`)
+              span U
+              
+            form          
+              .selection
+                .label I want to be a &hellip;
+                .buttons
+                  span: a Hacker
+                  span: a Volunteer
+                  span: a Sponsor
+                  
+              
+              input.email(placeholder="My Email Is ...")
+              .submit
+                button
+                  img(src=`${locals.img}/celebration.png`)
+                  //- span Submit
+          
