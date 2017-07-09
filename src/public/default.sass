@@ -6,6 +6,8 @@
 @import "bulma/sass/base/_all"
 @import "bulma/sass/layout/_all"
 
+@import "css3-mixins"
+
 // custom color
 $red: #fe5565
 
@@ -13,19 +15,33 @@ $red: #fe5565
     background: none
 
 // Custom font faces
-@font-face
-  font-family: "Graphik-Bold"
-  src: font-files("./assets/fonts/Graphik-Bold.woff")
+// @font-face
+//   font-family: "Graphik-Bold"
+//   src: font-files("../public/fonts/Graphik-Bold.woff")
+//
+// @font-face
+//   font-family: "Graphik-Light"
+//   src: font-files("../public/fonts/Graphik-Light.woff")
 
 @font-face
-  font-family: "Graphik-Light"
-  src: font-files("./assets/fonts/Graphik-Light.woff")
+  font-family: 'Graphik'
+  font-style: normal
+  font-weight: 400
+  src: url("../public/fonts/Graphik-Light.woff")
+
+@font-face
+  font-family: 'Graphik'
+  font-style: normal
+  font-weight: 700
+  src: url("../public/fonts/Graphik-Bold.woff")
+
 
 @mixin Graphik($weight:400)
+  font-family: 'Graphik'
   @if $weight == 400
-    font-family: 'Graphik-Light', sans-serif
+    font-weight: 400
   @else
-    font-family: 'Graphik-Bold', sans-serif
+    font-weight: 700
 
 // Mixin placeholder
 @mixin placeholder-inner($color: $white, $uppercase: true, $weight: 400)
