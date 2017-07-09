@@ -92,7 +92,7 @@ section.section, section .container, .my-columns
                             transform: scale(.85,.85) translate(-4px, 3px)
 
 
-        form
+        .form
             @include font-size(2.25em)
 
             .selection
@@ -110,10 +110,13 @@ section.section, section .container, .my-columns
                     a
                         color: $white
 
-                        &:hover, &:active
+                        &:hover
                             text-decoration: underline
 
-            input.email
+                        &.focus
+                            text-decoration: underline
+
+            input#email
                 @include Graphik(700)
                 @include placeholder
                 @include font-size(36px)
@@ -145,6 +148,9 @@ section.section, section .container, .my-columns
                     justify-content: center
                     align-items: center
                     transition: all .3s ease-out
+
+                    &:hover
+                        transform: scale(1.1)
 
                     img
                         height: 32px
