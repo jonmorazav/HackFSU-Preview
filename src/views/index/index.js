@@ -1,8 +1,8 @@
 // index.js
 
 var interest = undefined;
-// const url = "https://2017.hackfsu.com/api/preview/register";
-const url = "https://requestb.in/1ho3ytm1";
+const url = "https://2017.hackfsu.com/api/preview/register";
+// const url = "https://requestb.in/1ho3ytm1";
 
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
