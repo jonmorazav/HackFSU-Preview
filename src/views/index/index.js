@@ -34,6 +34,9 @@ function validateEmail(email) {
                 email: email,
                 interest: interest
             });
+
+            $('#submit-button img').toggle();
+            $('#submit-button').append("<span>Submitted!</span>");
         }
 
     });
