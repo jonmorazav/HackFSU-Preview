@@ -10,10 +10,8 @@ block append scripts
 block content
   include partials/mlh-badge.pug
   .wrapper
-    section.section.main
-          //- #logo
-          //-   img(src=`${locals.img}/hackfsu.png`)
-
+    section.section.main.columns.is-gapless
+        .column.is-8-widescreen.content-wrap
           .content
             .title
               span.letter H
@@ -36,6 +34,9 @@ block content
               .submit
                 button#submit-button
                   img(src=`${locals.img}/celebration.png`)
+        .column.logo
+          img(src=`${locals.img}/half.png`)
+
               
     footer.footer
       .container
