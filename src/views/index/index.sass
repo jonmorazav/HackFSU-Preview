@@ -13,22 +13,6 @@ body
     color: $white
     min-height: 700px
 
-section .container
-    position: relative
-
-section.section, section .container, .my-columns
-    height: 100%
-
-.my-columns
-    display: flex
-    flex-direction: column
-    align-items: center
-    min-height: 600px
-
-
-    +desktop
-        flex-direction: row-reverse
-
 @mixin font-size($size)
     font-size: $size * 0.4
     +tablet
@@ -48,9 +32,6 @@ section.section, section .container, .my-columns
     flex-direction: column
     justify-content: center
     align-items: center
-    +desktop
-        height: 100%
-
 
     .content
         position: relative
