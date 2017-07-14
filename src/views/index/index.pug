@@ -9,35 +9,36 @@ block append scripts
 
 block content
   include partials/mlh-badge.pug
-  section.section.main
-        //- #logo
-        //-   img(src=`${locals.img}/hackfsu.png`)
+  .wrapper
+    section.section.main
+          //- #logo
+          //-   img(src=`${locals.img}/hackfsu.png`)
 
-        .content
-          .title
-            span.letter H
-            span.letter a
-            span.letter c
-            span.letter k
-            span.letter F
-            span.letter.five 5
-            span.letter U
-            
-          .form          
-            .selection
-              .label I want to be a &hellip;
-              .buttons
-                span: a(name="hacker") Hacker
-                span: a(name="volunteer") Volunteer
-                span: a(name="sponsor") Sponsor
-                
-            input#email(type="email", placeholder="My Email Is ...")
-            .submit
-              button#submit-button
-                img(src=`${locals.img}/celebration.png`)
-            
-  footer.footer
-    .container
-      .content.has-text-centered
-        p: a#code-of-conduct(href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf") MLH Code of Conduct
-    
+          .content
+            .title
+              span.letter H
+              span.letter a
+              span.letter c
+              span.letter k
+              span.letter F
+              span.letter.five 5
+              span.letter U
+              
+            .form          
+              .selection
+                .label I want to be a &hellip;
+                .buttons
+                  span: a(name="hacker") Hacker
+                  span: a(name="volunteer") Volunteer
+                  span: a(name="sponsor") Sponsor
+                  
+              input#email(type="email", placeholder="My Email Is ...")
+              .submit
+                button#submit-button
+                  img(src=`${locals.img}/celebration.png`)
+              
+    footer.footer
+      .container
+        .content.has-text-centered
+          p: a#code-of-conduct(href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf") MLH Code of Conduct
+      
