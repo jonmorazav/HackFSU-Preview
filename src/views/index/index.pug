@@ -9,26 +9,18 @@ block append scripts
 
 block content
   include partials/mlh-badge.pug
-  section.section
-    .container
-          
-      .my-columns
-        #logo
-          img(src=`${locals.img}/hackfsu.png`)
-
-        #main
+  .wrapper
+    section.section.main.columns.is-gapless
+        .column.is-8-widescreen.content-wrap
           .content
             .title
-              span H
-              span a
-              span c
-              span k
-              span F
-              //- span 5
-              span.five 
-                span 5
-                img(src=`${locals.img}/5.svg`)
-              span U
+              span.letter H
+              span.letter a
+              span.letter c
+              span.letter k
+              span.letter F
+              span.letter.five 5
+              span.letter U
               
             .form          
               .selection
@@ -38,12 +30,16 @@ block content
                   span: a(name="volunteer") Volunteer
                   span: a(name="sponsor") Sponsor
                   
-              
               input#email(type="email", placeholder="My Email Is ...")
               .submit
                 button#submit-button
                   img(src=`${locals.img}/celebration.png`)
-                  //- span Submit
-            .code
-              a#code-of-conduct(href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf") MLH Code of Conduct
-          
+        .column.logo
+          img(src=`${locals.img}/half.png`)
+
+              
+    footer.footer
+      .container
+        .content.has-text-centered
+          p: a#code-of-conduct(href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf") MLH Code of Conduct
+      
