@@ -35,13 +35,21 @@ $red: #fe5565
   font-weight: 700
   src: url("../public/fonts/Graphik-Bold.woff")
 
+@font-face
+  font-family: 'HackFSU5'
+  font-style: normal
+  font-weight: 700
+  src: url("../public/fonts/hackfsu5.woff")
 
 @mixin Graphik($weight:400)
-  font-family: 'Graphik'
+  font-family: 'Graphik', sans-serif
   @if $weight == 400
     font-weight: 400
   @else
     font-weight: 700
+
+@mixin Five-Font
+  font-family: 'HackFSU5', 'Graphik', sans-serif
 
 // Mixin placeholder
 @mixin placeholder-inner($color: $white, $uppercase: true, $weight: 400)
