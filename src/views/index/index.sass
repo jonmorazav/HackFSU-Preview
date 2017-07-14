@@ -30,130 +30,101 @@ body
     +desktop
         width: $size
 
-#main
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
+.content
 
-    .content
-        position: relative
+    .title
+        display: flex
+        justify-content: space-between
 
-        .title
-            display: flex
-            justify-content: space-between
-            margin-right: -18px
+        span.letter
+            @include Graphik(700)
+            @include no-select
+            @include font-size(128px)
+            text-transform: uppercase
+            letter-spacing: 4
 
-            span
+            +tablet
+                letter-spacing: 16
+
+            &.five
+                @include Five-Font
+
+    .code
+        text-align: center
+        margin-top: 32px
+
+        #code-of-conduct
+            color: $white
+            text-decoration: underline
+
+    .form
+        @include font-size(2.25em)
+
+        .selection
+            text-transform: uppercase
+
+            .label
+                @include Graphik(400)
+
+            .buttons
                 @include Graphik(700)
-                @include no-select
-                @include font-size(128px)
-                text-transform: uppercase
-                letter-spacing: 4
 
-
-                +tablet
-                    letter-spacing: 16
-
-                span
-                    // display: block
-                    // +tablet
-                    display: none
-
-
-                &.five
-                    display: flex
-                    flex-direction: column
-                    justify-content: center
-
-                    @include five-size(97px)
-
-                    img
-                        display: block
-                        transform: scale(.85,.85) translate(-2px, 0px)
-
-                        +tablet
-                            transform: scale(.85,.85) translate(-4px, 1px)
-
-                        +desktop
-                            transform: scale(.85,.85) translate(-4px, 3px)
-
-        .code
-            text-align: center
-            margin-top: 32px
-
-            #code-of-conduct
-                color: $white
-                text-decoration: underline
-
-        .form
-            @include font-size(2.25em)
-
-            .selection
-                text-transform: uppercase
-
-                .label
-                    @include Graphik(400)
-
-                .buttons
-                    @include Graphik(700)
-
-                    display: flex
-                    justify-content: space-between
-
-                    a
-                        color: $white
-
-                        &:hover
-                            text-decoration: underline
-
-                        &.focus
-                            text-decoration: underline
-
-            input#email
-                @include Graphik(700)
-                @include placeholder
-                @include font-size(36px)
-
-                background: none
-                border: none
-                color: $white
-                margin: 32px 0
-
-                border-radius: 0
-                border-bottom: 1px $white solid
-                +desktop
-                    border-bottom-width: 3px
-
-                width: 100%
-
-            .submit
                 display: flex
-                justify-content: center
+                justify-content: space-between
 
-                button
-                    position: relative
-                    background: $white
-                    border: none
-                    border-radius: 12px
-                    min-width: 64px
-                    min-height: 56px
-                    padding: 8px
-                    display: flex
-                    justify-content: center
-                    align-items: center
-                    transition: all .3s ease-out
+                a
+                    color: $white
 
                     &:hover
-                        transform: scale(1.1)
+                        text-decoration: underline
 
-                    img
-                        height: 32px
-                        width: 32px
+                    &.focus
+                        text-decoration: underline
 
-                    span
-                        @include Graphik(700)
-                        font-size: 16px
+        input#email
+            @include Graphik(700)
+            @include placeholder
+            @include font-size(36px)
+
+            background: none
+            border: none
+            color: $white
+            margin: 32px 0
+
+            border-radius: 0
+            border-bottom: 1px $white solid
+            +desktop
+                border-bottom-width: 3px
+
+            width: 100%
+
+        .submit
+            display: flex
+            justify-content: center
+
+            button
+                position: relative
+                background: $white
+                border: none
+                border-radius: 12px
+                min-width: 64px
+                min-height: 56px
+                padding: 8px
+                display: flex
+                justify-content: center
+                align-items: center
+                transition: all .3s ease-out
+
+                &:hover
+                    transform: scale(1.1)
+
+                img
+                    height: 32px
+                    width: 32px
+
+                span
+                    @include Graphik(700)
+                    font-size: 16px
 
 #logo
     // display: none
