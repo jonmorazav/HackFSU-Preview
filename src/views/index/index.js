@@ -22,7 +22,7 @@ function validateEmail(email) {
 
     });
 
-    $('#submit-button').click(function() {
+    $('#submit-button').bind("click", function() {
         var email = $('#email').get(0).value;
 
         if(!email || !validateEmail(email)) {
@@ -37,6 +37,7 @@ function validateEmail(email) {
 
             $('#submit-button img').toggle();
             $('#submit-button').append("<span>Submitted!</span>");
+            $('#submit-button').unbind("click");
         }
 
     });
