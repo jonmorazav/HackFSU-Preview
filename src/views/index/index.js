@@ -12,17 +12,15 @@ function validateEmail(email) {
 (function () {
 
     $('.section .buttons span a').click(function(event) {
-
         $('.section .buttons span a').removeClass("focus");
         $(this).toggleClass("focus");
 
         console.log(this.name);
         interest = this.name;
         $('#email').focus();
-
     });
 
-    $('#submit-button').click(function() {
+    $('#submit-button').bind("click", function() {
         var email = $('#email').get(0).value;
 
         if(!email || !validateEmail(email)) {
@@ -37,8 +35,13 @@ function validateEmail(email) {
 
             $('#submit-button img').toggle();
             $('#submit-button').append("<span>Submitted!</span>");
+            $('#submit-button').unbind("click");
         }
-
     });
+
+    // Disable custom 5 rendering on Windows due to font errors
+    if (window.navigator.userAgent.indexOf("Windows")!= -1) {
+        $('.letter.five').toggleClass('five');
+    }
 
 })();

@@ -1,0 +1,15 @@
+// index/partials/mixins.sass
+
+@mixin font-size($size)
+    font-size: $size * 0.4
+    +tablet
+        font-size: $size * 0.75
+    +desktop
+        font-size: $size
+
+@mixin five-size($size)
+    width: $size * 0.4
+    +tablet
+        width: $size * 0.75
+    +desktop
+        width: $size
