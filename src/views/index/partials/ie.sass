@@ -1,0 +1,100 @@
+.modal 
+    display: none 
+    position: fixed 
+    z-index: 1 
+    padding-top: 100px 
+    left: 0
+    top: 0
+    width: 100% 
+    height: 100%
+    overflow: auto 
+    background-color: rgb(0,0,0) 
+    background-color: rgba(0,0,0,0.4)
+
+.window 
+ background: #bfbfbf
+ border: 1px solid
+ border-top-color: #dfdfdf
+ border-left-color: #dfdfdf
+ border-right-color: #808080
+ border-bottom-color: #808080
+ box-shadow: 1px 1px 0 0 #000
+ position: relative
+ margin: auto
+ padding: 0
+ width: 30%
+ top: 50%
+ transform: translateY(-55%)
+ animation-name: animatetop
+ animation-duration: 0.8s
+
+.window .content 
+ padding: 15px 10px 8px 10px
+ color: black
+
+.window .header 
+ margin: 2px 2px 0
+ padding: 1px 2px
+ color: #fff
+ background: -webkit-linear-gradient(left, #000080, #1084d0)
+ background: linear-gradient(to right, #000080, #1084d0)
+ font-weight: bold
+ font-size: 11px
+ line-height: 16px
+
+.window .header .icon 
+ width: 16px
+ height: 16px
+ float: left
+ margin-right: 2px
+
+.window .header .buttons 
+ height: 14px
+ float: right
+
+.window .header .buttons button 
+ vertical-align: text-top
+ font-weight: bold
+ line-height: 12px
+ padding: 0
+ height: 14px
+ width: 14px
+ 
+button 
+ -webkit-font-smoothing: none
+ -moz-osx-font-smoothing: none
+ font-size: 11px
+ font-family: Tahoma, Verdana
+ color: #070707
+ background: #bfbfbf
+ border: 1px solid
+ border-top-color: #dfdfdf
+ border-left-color: #dfdfdf
+ border-right-color: #808080
+ border-bottom-color: #808080
+ box-shadow: 1px 1px 0 0 #000
+ text-align: center
+ outline: none
+ padding: 4px
+
+button:enabled 
+ color: #070707
+
+button:disabled 
+ color: #818181
+ text-shadow: 1px 1px #fff
+
+button:active:enabled 
+ box-shadow: 0 0 0 0 #000 inset
+ border-top-color: #000
+ border-left-color: #000
+ border-right-color: #000
+ border-bottom-color: #000
+ 
+@keyframes animatetop 
+    from 
+        top: -300px
+        opacity: 0
+    to 
+        top: 50%
+        opacity: 1
