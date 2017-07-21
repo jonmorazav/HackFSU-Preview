@@ -43,5 +43,57 @@ function validateEmail(email) {
     if (window.navigator.userAgent.indexOf("Windows")!= -1) {
         $('.letter.five').toggleClass('five');
     }
+    // Detect if IE
+    var version = detectIE();
+    
+    if (version === false) {
+        //don't do anything
+    }
+    else if (version >= 12) {
+        //Edge - Also don't do anything
+    }
+    else {
+        //IE - Show modal
+        var modal = document.getElementById('98');
+        var button = document.getElementById('closeBtn');
+        var x = document.getElementById('closeX');
 
+        modal.style.display = "block";
+
+
+        x.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        button.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
 })();
+
+
+function detectIE() {
+  var ua = window.navigator.userAgent;
+
+  var msie = ua.indexOf('MSIE ');
+  if (msie > 0) {
+    // IE 10 or older => return version number
+    return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+  }
+
+  var trident = ua.indexOf('Trident/');
+  if (trident > 0) {
+    // IE 11 => return version number
+    var rv = ua.indexOf('rv:');
+    return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+  }
+
+  var edge = ua.indexOf('Edge/');
+  if (edge > 0) {
+    // Edge (IE 12+) => return version number
+    return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+  }
+
+  // other browser
+  return false;
+}
