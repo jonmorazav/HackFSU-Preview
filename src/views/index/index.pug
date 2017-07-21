@@ -36,8 +36,22 @@ block content
                   img(src=`${locals.img}/celebration.png`)
         .column.logo
           img(src=`${locals.img}/half.png`)
-
-              
+          
+    div#98.modal
+      .window
+        .header
+          img.icon(src=`${locals.img}/98.gif`)
+          span UX Warning!
+          .buttons
+            button#closeX X
+        .content
+          center
+            h3 
+              b Whoah there buddy!
+            p We see you're using IE which we all know isn't the easiest to develop on. Therefore to save time and manpower, we've taken the unanimous decision to not have formal support for IE. With that in mind, this is our formal warning to you, the user, that your experience on this site will be experimental and full of bugs. Nonetheless, feel free to continue at your own risk. -HackFSU Crew
+            br 
+            button#closeBtn I Agree
+  
     footer.footer
       .container
         .content.has-text-centered
